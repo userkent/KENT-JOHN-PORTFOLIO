@@ -1,6 +1,6 @@
 /**
  * Kent John G. Quimzon - Portfolio Script
- * Handles single-page view switching, navigation state, and form handlers.
+ * Handles single-page view switching, dark/light theme toggle, and forms.
  */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -8,30 +8,42 @@ document.addEventListener("DOMContentLoaded", () => {
   const pageViews = document.querySelectorAll(".page-view");
   const hamburgerBtn = document.getElementById("hamburger-btn");
   const navLinks = document.getElementById("nav-links");
+  const themeToggleBtn = document.getElementById("theme-toggle");
+
+  // --- Theme Toggle Logic ---
+  const savedTheme = localStorage.getItem("portfolio-theme");
+  if (savedTheme === "light") {
+    document.body.classList.add("light-mode");
+  }
+
+  if (themeToggleBtn) {
+    themeToggleBtn.addEventListener("click", () => {
+      document.body.classList.toggle("light-mode");
+      const isLight = document.body.classList.contains("light-mode");
+      localStorage.setItem("portfolio-theme", isLight ? "light" : "dark");
+    });
+  }
 
   /**
    * Switches the active view/page without vertical scrolling.
-   * @param {string} targetId - The section ID to activate (e.g. "home", "about").
+   * @param {string} targetId - The section ID to activate.
    */
   function switchPage(targetId) {
     if (!targetId) targetId = "home";
 
-    // Normalize target ID in case '#' is present
     const cleanId = targetId.replace("#", "");
-
-    // Check if the section exists
     const targetSection = document.getElementById(cleanId);
     if (!targetSection) return;
 
-    // 1. Hide all pages
+    // Hide all page views
     pageViews.forEach((view) => {
       view.classList.remove("active");
     });
 
-    // 2. Show the targeted page
+    // Show active target section
     targetSection.classList.add("active");
 
-    // 3. Update navbar active tab states
+    // Update navbar link states
     navTabs.forEach((tab) => {
       const pageAttr = tab.getAttribute("data-page");
       if (pageAttr === cleanId) {
@@ -41,13 +53,13 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    // 4. Scroll to top of page cleanly
+    // Reset window scroll position
     window.scrollTo({ top: 0, behavior: "instant" });
 
-    // 5. Close mobile navigation menu if open
+    // Close mobile drawer if open
     if (navLinks && navLinks.classList.contains("open")) {
       navLinks.classList.remove("open");
-      hamburgerBtn.setAttribute("aria-expanded", "false");
+      if (hamburgerBtn) hamburgerBtn.setAttribute("aria-expanded", "false");
     }
   }
 
@@ -56,14 +68,12 @@ document.addEventListener("DOMContentLoaded", () => {
     tab.addEventListener("click", (event) => {
       event.preventDefault();
       const pageId = tab.getAttribute("data-page");
-      
-      // Update browser location hash without triggering jump
       history.pushState(null, "", `#${pageId}`);
       switchPage(pageId);
     });
   });
 
-  // --- Handle Mobile Drawer Menu ---
+  // --- Mobile Navigation Menu Handler ---
   if (hamburgerBtn && navLinks) {
     hamburgerBtn.addEventListener("click", () => {
       const isOpen = navLinks.classList.toggle("open");
@@ -77,15 +87,11 @@ document.addEventListener("DOMContentLoaded", () => {
     switchPage(currentHash);
   });
 
-  // --- Initial Page Load Handling ---
+  // --- Initial Page Load ---
   const initialHash = window.location.hash.substring(1);
-  if (initialHash) {
-    switchPage(initialHash);
-  } else {
-    switchPage("home");
-  }
+  switchPage(initialHash || "home");
 
-  // --- Form Submission Handler ---
+  // --- Contact Form Handling ---
   const contactForm = document.getElementById("contactForm");
   if (contactForm) {
     contactForm.addEventListener("submit", (e) => {
