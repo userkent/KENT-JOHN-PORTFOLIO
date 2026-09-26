@@ -4,59 +4,70 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Portfolio of Kent John G. Quimzon — Information Technology student, developer, and problem solver." />
-  <title>Kent John G. Quimzon | IT Student Portfolio</title>
+  <title>KJ Q. | IT Student</title>
+  
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<!--
-========================================
-PERSONAL INFORMATION
-Replace these placeholders if needed:
-
-Name: Kent John G. Quimzon
-School: Northern Bukidnon State College
-Course: Bachelor of Science in Information Technology
-Year Level: 2nd Year
-Email: Kininjagaming@gmail.com
-GitHub: https://github.com/userkent
-Facebook: [YOUR FACEBOOK]
-Location: Philippines
-========================================
--->
-
   <!-- Decorative background layers -->
   <div class="bg-grid" aria-hidden="true"></div>
   <div class="bg-glow bg-glow-1" aria-hidden="true"></div>
   <div class="bg-glow bg-glow-2" aria-hidden="true"></div>
 
-  <!-- ========================= NAVIGATION ========================= -->
+  <!-- NAVIGATION -->
   <header class="site-header">
     <nav class="navbar" aria-label="Primary">
-      <a href="#home" class="logo">KJ.</a>
+      <a href="#home" class="logo nav-tab" data-page="home">KJ.</a>
 
-      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true" />
-      <label for="nav-toggle" class="hamburger" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </label>
+      <div class="nav-actions">
+        <!-- LIGHT/DARK THEME TOGGLE BUTTON -->
+        <!-- LIGHT/DARK THEME TOGGLE BUTTON WITH GREEN SVG ICONS -->
+<button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Light/Dark Mode">
+  <!-- Neon Green Sun Icon -->
+  <svg class="theme-icon sun-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <circle cx="12" cy="12" r="5"></circle>
+    <line x1="12" y1="1" x2="12" y2="3"></line>
+    <line x1="12" y1="21" x2="12" y2="23"></line>
+    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+    <line x1="1" y1="12" x2="3" y2="12"></line>
+    <line x1="21" y1="12" x2="23" y2="12"></line>
+    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+  </svg>
 
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#contact">Contact</a></li>
+  <!-- Neon Green Moon Icon -->
+  <svg class="theme-icon moon-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+  </svg>
+</button>
+
+        <button id="hamburger-btn" class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home" class="nav-tab active" data-page="home">Home</a></li>
+        <li><a href="#about" class="nav-tab" data-page="about">About</a></li>
+        <li><a href="#education" class="nav-tab" data-page="education">Education</a></li>
+        <li><a href="#skills" class="nav-tab" data-page="skills">Skills</a></li>
+        <li><a href="#services" class="nav-tab" data-page="services">Services</a></li>
+        <li><a href="#journey" class="nav-tab" data-page="journey">Journey</a></li>
+        <li><a href="#contact" class="nav-tab" data-page="contact">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <main>
-    <!-- ========================= HERO ========================= -->
-    <section id="home" class="hero section">
+  <main class="page-container">
+    <!-- ========================= HERO / HOME PAGE ========================= -->
+    <section id="home" class="page-view active">
       <div class="container hero-grid">
-        <div class="hero-content reveal">
+        <div class="hero-content">
           <div class="hero-meta">
             <span class="terminal-label">&lt; IT STUDENT / DEVELOPER &gt;</span>
             <span class="status-pill">
@@ -79,12 +90,13 @@ Location: Philippines
             web development, and creating useful digital solutions. I'm continuously improving
             my skills through academic projects, research, and hands-on experience.
           </p>
+
           <div class="social-links" aria-label="Social links">
             <a href="https://github.com/userkent" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
               <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.161 22 16.416 22 12c0-5.523-4.477-10-10-10z"/></svg>
               GitHub
             </a>
-            <a href="https://www.facebook.com/kent.john.5283" aria-label="Facebook">
+            <a href="https://www.facebook.com/kent.john.5283" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
               <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>
               Facebook
             </a>
@@ -95,7 +107,7 @@ Location: Philippines
           </div>
         </div>
 
-        <div class="hero-visual reveal">
+        <div class="hero-visual">
           <div class="profile-frame">
             <div class="profile-ring" aria-hidden="true"></div>
             <div class="profile-brackets" aria-hidden="true">
@@ -115,17 +127,17 @@ Location: Philippines
       </div>
     </section>
 
-    <!-- ========================= ABOUT ========================= -->
-    <section id="about" class="section about">
+    <!-- ========================= ABOUT PAGE ========================= -->
+    <section id="about" class="page-view">
       <div class="container">
-        <header class="section-header reveal">
+        <header class="section-header">
           <span class="section-number">01# //</span>
           <h2 class="section-title">ABOUT ME</h2>
           <div class="section-line" aria-hidden="true"></div>
         </header>
 
         <div class="about-grid">
-          <div class="about-copy reveal">
+          <div class="about-copy">
             <p>
               I am an Information Technology student interested in programming, web development,
               databases, and modern technology. I enjoy learning new tools, solving problems, and
@@ -140,9 +152,9 @@ Location: Philippines
             <div class="terminal-box" aria-label="Terminal style intro">
               <div class="terminal-bar">
                 <span></span><span></span><span></span>
-                <em>I'am userkent:~</em>
+                <em>userkent:~</em>
               </div>
-              <pre><code><span class="t-prompt">I'am userkent:~$</span> WE LEARN WE CODE!
+              <pre><code><span class="t-prompt">userkent:~$</span> WE LEARN WE CODE!
 <span class="t-out">IT Student</span>
 <span class="t-out">Developer</span>
 <span class="t-out">Problem Solver</span>
@@ -150,7 +162,7 @@ Location: Philippines
             </div>
           </div>
 
-          <aside class="info-card card reveal">
+          <aside class="info-card card">
             <p class="card-label">[ SYSTEM // PROFILE ]</p>
             <ul class="info-list">
               <li><span>Name</span><strong>Kent John G. Quimzon</strong></li>
@@ -162,19 +174,20 @@ Location: Philippines
             </ul>
           </aside>
         </div>
+      </div>
+    </section>
 
-
-    <!-- ========================= EDUCATION ========================= -->
-    <section id="education" class="section education">
+    <!-- ========================= EDUCATION PAGE ========================= -->
+    <section id="education" class="page-view">
       <div class="container">
-        <header class="section-header reveal">
+        <header class="section-header">
           <span class="section-number">02# //</span>
           <h2 class="section-title">EDUCATION</h2>
           <div class="section-line" aria-hidden="true"></div>
         </header>
 
         <div class="timeline">
-          <article class="timeline-item card reveal">
+          <article class="timeline-item card">
             <span class="timeline-dot" aria-hidden="true"></span>
             <p class="card-label">COLLEGE</p>
             <h3>Bachelor of Science in Information Technology</h3>
@@ -185,7 +198,7 @@ Location: Philippines
             </p>
           </article>
 
-          <article class="timeline-item card reveal">
+          <article class="timeline-item card">
             <span class="timeline-dot" aria-hidden="true"></span>
             <p class="card-label">SENIOR HIGH SCHOOL</p>
             <h3>Libona National High School</h3>
@@ -199,19 +212,19 @@ Location: Philippines
       </div>
     </section>
 
-    <!-- ========================= SKILLS ========================= -->
-    <section id="skills" class="section skills">
+    <!-- ========================= SKILLS PAGE ========================= -->
+    <section id="skills" class="page-view">
       <div class="container">
-        <header class="section-header reveal">
+        <header class="section-header">
           <span class="section-number">03# //</span>
           <h2 class="section-title">SKILLS</h2>
           <div class="section-line" aria-hidden="true"></div>
           <p class="section-lead">Skills &amp; Technologies</p>
         </header>
 
-        <h3 class="subsection-title reveal">Programming Languages</h3>
+        <h3 class="subsection-title">Programming Languages</h3>
         <div class="skill-grid">
-          <article class="skill-card card reveal" style="--level: 75%">
+          <article class="skill-card card" style="--level: 75%">
             <div class="skill-head">
               <span class="skill-icon" aria-hidden="true">{ }</span>
               <div>
@@ -220,12 +233,12 @@ Location: Philippines
               </div>
               <span class="skill-pct">75%</span>
             </div>
-            <div class="skill-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" aria-label="Java skill level 75 percent">
+            <div class="skill-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
               <span class="skill-fill"></span>
             </div>
           </article>
 
-          <article class="skill-card card reveal" style="--level: 75%">
+          <article class="skill-card card" style="--level: 75%">
             <div class="skill-head">
               <span class="skill-icon" aria-hidden="true">&lt;/&gt;</span>
               <div>
@@ -234,12 +247,12 @@ Location: Philippines
               </div>
               <span class="skill-pct">75%</span>
             </div>
-            <div class="skill-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" aria-label="HTML skill level 90 percent">
+            <div class="skill-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
               <span class="skill-fill"></span>
             </div>
           </article>
 
-          <article class="skill-card card reveal" style="--level: 75%">
+          <article class="skill-card card" style="--level: 75%">
             <div class="skill-head">
               <span class="skill-icon" aria-hidden="true">#</span>
               <div>
@@ -248,12 +261,12 @@ Location: Philippines
               </div>
               <span class="skill-pct">75%</span>
             </div>
-            <div class="skill-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" aria-label="CSS skill level 85 percent">
+            <div class="skill-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
               <span class="skill-fill"></span>
             </div>
           </article>
 
-          <article class="skill-card card reveal" style="--level: 65%">
+          <article class="skill-card card" style="--level: 65%">
             <div class="skill-head">
               <span class="skill-icon" aria-hidden="true">JS</span>
               <div>
@@ -262,12 +275,12 @@ Location: Philippines
               </div>
               <span class="skill-pct">65%</span>
             </div>
-            <div class="skill-bar" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" aria-label="JavaScript skill level 65 percent">
+            <div class="skill-bar" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
               <span class="skill-fill"></span>
             </div>
           </article>
 
-          <article class="skill-card card reveal" style="--level: 30%">
+          <article class="skill-card card" style="--level: 30%">
             <div class="skill-head">
               <span class="skill-icon" aria-hidden="true">DB</span>
               <div>
@@ -276,42 +289,41 @@ Location: Philippines
               </div>
               <span class="skill-pct">30%</span>
             </div>
-            <div class="skill-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" aria-label="SQL skill level 70 percent">
+            <div class="skill-bar" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">
               <span class="skill-fill"></span>
             </div>
           </article>
         </div>
 
-        <h3 class="subsection-title reveal">Development Tools</h3>
+        <h3 class="subsection-title">Development Tools</h3>
         <div class="tools-grid">
-          <article class="tool-card card reveal"><h4>Git</h4><p>Version control for tracking project changes.</p></article>
-          <article class="tool-card card reveal"><h4>GitHub</h4><p>Hosting code and collaborating on repositories.</p></article>
-          <article class="tool-card card reveal"><h4>Visual Studio Code</h4><p>Primary editor for coding and debugging.</p></article>
-          <article class="tool-card card reveal"><h4>Apache NetBeans</h4><p>AI-assisted development and faster iteration.</p></article>
-          <article class="tool-card card reveal"><h4>MySQL</h4><p>Relational databases and SQL practice.</p></article>
-          <article class="tool-card card reveal"><h4>Canva</h4><p>Visuals, presentations, and design assets.</p></article>
-          <article class="tool-card card reveal"><h4>Microsoft Office</h4><p>Documents, sheets, and academic deliverables.</p></article>
+          <article class="tool-card card"><h4>Git</h4><p>Version control for tracking project changes.</p></article>
+          <article class="tool-card card"><h4>GitHub</h4><p>Hosting code and collaborating on repositories.</p></article>
+          <article class="tool-card card"><h4>Visual Studio Code</h4><p>Primary editor for coding and debugging.</p></article>
+          <article class="tool-card card"><h4>Apache NetBeans</h4><p>AI-assisted development and faster iteration.</p></article>
+          <article class="tool-card card"><h4>MySQL</h4><p>Relational databases and SQL practice.</p></article>
+          <article class="tool-card card"><h4>Canva</h4><p>Visuals, presentations, and design assets.</p></article>
+          <article class="tool-card card"><h4>Microsoft Office</h4><p>Documents, sheets, and academic deliverables.</p></article>
         </div>
 
-        <h3 class="subsection-title reveal">Soft Skills</h3>
+        <h3 class="subsection-title">Soft Skills</h3>
         <div class="soft-grid">
-          <article class="soft-card card reveal"><span aria-hidden="true">🧩</span><h4>Problem Solving</h4><p>Break down challenges into clear, workable steps.</p></article>
-          <article class="soft-card card reveal"><span aria-hidden="true">🤝</span><h4>Teamwork</h4><p>Collaborate effectively on academic and group work.</p></article>
-          <article class="soft-card card reveal"><span aria-hidden="true">💬</span><h4>Communication</h4><p>Explain ideas clearly in writing and discussion.</p></article>
-          <article class="soft-card card reveal"><span aria-hidden="true">🧠</span><h4>Critical Thinking</h4><p>Evaluate options and choose practical solutions.</p></article>
-          <article class="soft-card card reveal"><span aria-hidden="true">⏱️</span><h4>Time Management</h4><p>Balance coursework, projects, and deadlines.</p></article>
-          <article class="soft-card card reveal"><span aria-hidden="true">✨</span><h4>Creativity</h4><p>Design clean interfaces and useful project ideas.</p></article>
-          <article class="soft-card card reveal"><span aria-hidden="true">🔄</span><h4>Adaptability</h4><p>Learn new tools and adjust to changing requirements.</p></article>
-          <article class="soft-card card reveal"><span aria-hidden="true">📚</span><h4>Willingness to Learn</h4><p>Stay curious and improve through practice.</p></article>
+          <article class="soft-card card"><span aria-hidden="true">🧩</span><h4>Problem Solving</h4><p>Break down challenges into clear, workable steps.</p></article>
+          <article class="soft-card card"><span aria-hidden="true">🤝</span><h4>Teamwork</h4><p>Collaborate effectively on academic and group work.</p></article>
+          <article class="soft-card card"><span aria-hidden="true">💬</span><h4>Communication</h4><p>Explain ideas clearly in writing and discussion.</p></article>
+          <article class="soft-card card"><span aria-hidden="true">🧠</span><h4>Critical Thinking</h4><p>Evaluate options and choose practical solutions.</p></article>
+          <article class="soft-card card"><span aria-hidden="true">⏱️</span><h4>Time Management</h4><p>Balance coursework, projects, and deadlines.</p></article>
+          <article class="soft-card card"><span aria-hidden="true">✨</span><h4>Creativity</h4><p>Design clean interfaces and useful project ideas.</p></article>
+          <article class="soft-card card"><span aria-hidden="true">🔄</span><h4>Adaptability</h4><p>Learn new tools and adjust to changing requirements.</p></article>
+          <article class="soft-card card"><span aria-hidden="true">📚</span><h4>Willingness to Learn</h4><p>Stay curious and improve through practice.</p></article>
         </div>
       </div>
     </section>
 
-   
-    <!-- ========================= SERVICES ========================= -->
-    <section id="services" class="section services">
+    <!-- ========================= SERVICES PAGE ========================= -->
+    <section id="services" class="page-view">
       <div class="container">
-        <header class="section-header reveal">
+        <header class="section-header">
           <span class="section-number">04# //</span>
           <h2 class="section-title">SERVICES</h2>
           <div class="section-line" aria-hidden="true"></div>
@@ -319,23 +331,23 @@ Location: Philippines
         </header>
 
         <div class="services-grid">
-          <article class="service-card card reveal">
+          <article class="service-card card">
             <h3>Web Development</h3>
             <p>Create responsive and user-friendly websites using HTML, CSS, and JavaScript.</p>
           </article>
-          <article class="service-card card reveal">
+          <article class="service-card card">
             <h3>Programming</h3>
             <p>Develop programs and solve algorithmic problems using Java and other programming languages.</p>
           </article>
-          <article class="service-card card reveal">
+          <article class="service-card card">
             <h3>UI Design</h3>
             <p>Create clean and simple interfaces focused on usability and visual presentation.</p>
           </article>
-          <article class="service-card card reveal">
+          <article class="service-card card">
             <h3>Database</h3>
             <p>Work with basic database structures and SQL queries.</p>
           </article>
-          <article class="service-card card reveal">
+          <article class="service-card card">
             <h3>Problem Solving</h3>
             <p>Approach technical problems logically and develop practical solutions.</p>
           </article>
@@ -343,10 +355,10 @@ Location: Philippines
       </div>
     </section>
 
-    <!-- ========================= JOURNEY ========================= -->
-    <section id="journey" class="section journey">
+    <!-- ========================= JOURNEY PAGE ========================= -->
+    <section id="journey" class="page-view">
       <div class="container">
-        <header class="section-header reveal">
+        <header class="section-header">
           <span class="section-number">05# //</span>
           <h2 class="section-title">JOURNEY</h2>
           <div class="section-line" aria-hidden="true"></div>
@@ -354,19 +366,19 @@ Location: Philippines
         </header>
 
         <div class="journey-timeline">
-          <article class="journey-item card reveal">
+          <article class="journey-item card">
             <span class="journey-year">2024</span>
             <p>Started exploring technology and programming.</p>
           </article>
-          <article class="journey-item card reveal">
+          <article class="journey-item card">
             <span class="journey-year">2025</span>
             <p>Developed programming fundamentals and participated in academic projects.</p>
           </article>
-          <article class="journey-item card reveal">
+          <article class="journey-item card">
             <span class="journey-year">2026</span>
             <p>Worked on web development, programming projects, and improved technical skills.</p>
           </article>
-          <article class="journey-item card reveal">
+          <article class="journey-item card">
             <span class="journey-year">Future</span>
             <p>Become a skilled IT professional and continue learning modern technologies.</p>
           </article>
@@ -374,22 +386,22 @@ Location: Philippines
       </div>
     </section>
 
-    <!-- ========================= CONTACT ========================= -->
-    <section id="contact" class="section contact">
+    <!-- ========================= CONTACT PAGE ========================= -->
+    <section id="contact" class="page-view">
       <div class="container">
-        <header class="section-header reveal">
+        <header class="section-header">
           <span class="section-number">06# //</span>
           <h2 class="section-title">CONTACT</h2>
           <div class="section-line" aria-hidden="true"></div>
           <p class="section-lead">Let's Work Together</p>
         </header>
 
-        <p class="contact-intro reveal">
+        <p class="contact-intro">
           I'm open to learning opportunities, collaborations, student projects, and conversations about technology.
         </p>
 
         <div class="contact-grid">
-          <div class="contact-cards reveal">
+          <div class="contact-cards">
             <a class="contact-card card" href="mailto:Kininjagaming@gmail.com">
               <span class="card-label">EMAIL</span>
               <strong>Kininjagaming@gmail.com</strong>
@@ -404,7 +416,7 @@ Location: Philippines
             </div>
           </div>
 
-          <form class="contact-form card reveal" action="#" method="get">
+          <form class="contact-form card" id="contactForm" action="#" method="get">
             <p class="card-label">[ MESSAGE TRANSMISSION ]</p>
             <label>
               Name
@@ -429,28 +441,20 @@ Location: Philippines
     </section>
   </main>
 
-  <!-- ========================= FOOTER ========================= -->
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container footer-inner">
       <p>© 2026 Kent John G. Quimzon. All Rights Reserved.</p>
-      <p class="footer-built">Built with HTML &amp; CSS</p>
+      <p class="footer-built">Built with HTML, CSS &amp; JS</p>
       <div class="footer-social">
         <a href="https://github.com/userkent" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a href="#">Facebook</a>
+        <a href="https://www.facebook.com/kent.john.5283" target="_blank" rel="noopener noreferrer">Facebook</a>
         <a href="mailto:Kininjagaming@gmail.com">Email</a>
       </div>
-      <a href="#home" class="back-top">Back to Top ↑</a>
     </div>
   </footer>
 
-  <!-- Close mobile nav when a link is clicked (checkbox hack helper) -->
-  <script>
-    document.querySelectorAll(".nav-links a").forEach(function (link) {
-      link.addEventListener("click", function () {
-        var toggle = document.getElementById("nav-toggle");
-        if (toggle) toggle.checked = false;
-      });
-    });
-  </script>
+  <!-- External JS File -->
+  <script src="script.js"></script>
 </body>
 </html>
